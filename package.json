@@ -1,0 +1,76 @@
+{
+  "name": "yvh-droid",
+  "version": "1.0.0",
+  "description": "Small API HTTP about the YVH communication system",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc --build",
+    "dev": "ts-node-dev src/index.ts",
+    "start": "node dist/index.js",
+    "test": "NODE_ENV=test PORT=8888 jest",
+    "test:watch": "npm run test -- --watchAll"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jemutorres/yvh-droid.git"
+  },
+  "author": "jemutorres",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jemutorres/yvh-droid/issues"
+  },
+  "homepage": "https://github.com/jemutorres/yvh-droid#readme",
+  "dependencies": {
+    "koa": "^2.13.0",
+    "koa-bodyparser": "^4.3.0",
+    "koa-logger": "^3.2.1",
+    "koa-router": "^10.0.0"
+  },
+  "devDependencies": {
+    "@types/jest": "^26.0.15",
+    "@types/koa": "^2.11.6",
+    "@types/koa-bodyparser": "^4.3.0",
+    "@types/koa-logger": "^3.1.1",
+    "@types/koa-router": "^7.4.1",
+    "@types/node": "^14.14.9",
+    "@types/supertest": "^2.0.10",
+    "husky": "^4.3.0",
+    "jest": "^26.6.3",
+    "prettier": "^2.2.0",
+    "prettier-quick": "^0.0.5",
+    "supertest": "^6.0.1",
+    "ts-jest": "^26.4.4",
+    "ts-node-dev": "^1.0.0"
+  },
+  "jest": {
+    "verbose": true,
+    "collectCoverage": true,
+    "modulePathIgnorePatterns": [
+      "<rootDir>/node_modules/"
+    ],
+    "roots": [
+      "<rootDir>/src/tests"
+    ],
+    "transform": {
+      "^.+\\.tsx?$": "ts-jest"
+    },
+    "testEnvironment": "node",
+    "testPathIgnorePatterns": [
+      "/node_modules/"
+    ],
+    "testRegex": "(/tests/.*|(\\.|/)(test|spec))\\.tsx?$",
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "jsx",
+      "json",
+      "node"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick --staged"
+    }
+  }
+}
